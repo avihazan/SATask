@@ -1,0 +1,1 @@
+angular.module('satask', ['ngCookies','satask.factories','satask.ctrl', 'satask.directives'])

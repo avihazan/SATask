@@ -1,0 +1,27 @@
+body {
+  background-color: #F1F1F1;
+}
+a {
+  margin-bottom: .2em;
+}
+span {
+  color: white;
+}
+.bg-orange{
+  background-color: orange;
+}
+/* Button styling */
+.btn-normal {
+  background-color: orange;
+}
+.btn-clicked{
+  background-color: green;
+}
+.btn-hover{
+  background-color: red;
+}
+.btn-disabled{
+  background-color: black;
+}
+
+

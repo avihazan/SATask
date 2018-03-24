@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="satask">
+  <head>
+    <base href="/" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SA Task</title>
+
+    <!-- Bootstrap 4-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></head>
+
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-cookies.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+  </head>
+  <body ng-controller="ctrl">
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="#/">SA Home Task</a>
+      <select ng-model="selectedUser" ng-options="x.name for x in optionals" ng-change="userChanged()"></select>
+    </nav>
+
+    <div class="container-fluid content center">
+      <div class="row justify-content-md-center">
+        <div class="col-xs-12 col-lg-6">
+          <h3 ng-if="!logged">Please login: you can pick a user from the right drop box</h3>
+          <div ng-if="logged">
+            <h3>Welcome {{selectedUser.name}},  select users to follow:</h3>
+            <!-- Table -->
+            <table class="table table-hover table-sm ">
+              <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Group</th>
+                <th scope="col">#Followers</th>
+                <th scope="col">Action</th>
+              </tr>
+              </thead>
+              <tr ng-repeat="user in data.users | orderBy:users.username">
+                <td>{{$index}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.groupname}}</td>
+                <td>{{user.counter}}</td>
+                <!-- followbtn directive -->
+                <td><followbtn follow="followUser(user)" unfollow="unFollowUser(user)" model="user"></followbtn></td>
+              </tr>
+            </table><!-- /table -->
+          </div>
+        </div>
+      </div> <!-- /row -->
+    </div>
+
+    <script src="./controller.js"></script>
+    <script src="./services.js"></script>
+    <script src="./directives.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

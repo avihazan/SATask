@@ -1,0 +1,19 @@
+{
+  "name": "satask",
+  "version": "1.0.0",
+  "description": "",
+  "main": "client/app.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Avi Hazan",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "parser": "^0.1.4",
+    "pg": "^6.4.2"
+  }
+}
